@@ -14,12 +14,13 @@ module.exports = function(app) {
   app.post("/api/notes", function(req, res) {
     let userArray = [];
     let userNote = req.body;
+    let id = userNote.id;
 
-    fs.readFile("db/db.json", (err, data) => {
+    fs.readFile("./db/db.json", (err, data) => {
       if (err) throw err;
       userArray = JSON.parse(data);
   
-      if (userArray === 0) {
+      if (userArray == 0) {
         let id = 0;
       }
       if (userArray.length > 0) {
@@ -31,7 +32,7 @@ module.exports = function(app) {
       userNote.id = id += 1;
       userArray.push(userNote); 
 
-      fs.writeFile("./Develop/db/db.json", JSON.stringify(userArray, null, 2), err => {
+      fs.writeFile("./db/db.json", JSON.stringify(userArray, null, 2), err => {
         if (err) throw err;
       });
     });
@@ -42,7 +43,7 @@ module.exports = function(app) {
   app.delete("/api/notes/:id", (req, res) => {
     let selected = parseInt(req.params.id);
 
-    fs.readFile("./Develop/db/db.json", (err, data) => {
+    fs.readFile("./db/db.json", (err, data) => {
       if (err) throw err;
       userArray = JSON.parse(data);
 
@@ -51,7 +52,7 @@ module.exports = function(app) {
           res.json(userArray.splice(i, 1));
         }
       }
-      fs.writeFile("./Develop/db/db.json", JSON.stringify(userArray, null, 2), err => {
+      fs.writeFile("./db/db.json", JSON.stringify(userArray, null, 2), err => {
         if (err) throw err;
         console.log(`Deleted Note #${selected}`);
       });
