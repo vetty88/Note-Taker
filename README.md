@@ -19,7 +19,7 @@
  Launched via Github hosting (github.io)
 
 Screenshot of Project (Google Chrome): 
-![Screenshot](./screen.PNG?raw=true)
+![Screenshot](./Screen.PNG?raw=true)
 Repo: https://github.com/vetty88/Note-Taker
 
 Video of file in action
