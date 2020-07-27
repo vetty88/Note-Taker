@@ -16,7 +16,13 @@
 
   This project uses Node JS to generate a note file on your local server. Handy for saving, storing, retrieving and deleting notes. 
 
-  [![Note-Taker Screen Shot][project-screenshot]](https://example.com)
+ Launched via Github hosting (github.io)
+
+Screenshot of Project (Google Chrome): 
+![Screenshot](./screen.PNG?raw=true)
+Repo: https://github.com/vetty88/Note-Taker
+
+Video of file in action
 
 
 ## Installation
@@ -64,9 +70,12 @@ Fork the Project
 ## Tests
 
 See the open issues for a list of proposed features (and known issues). Testing completed and any known issues include the following:
- No known issues. Testing was completed in Google Chrome  and Mozilla Firefox browsers to the local server.
+Current issue with deleting 'notes' getting error 'NaN will try tomorrow (28/07) to resolve. Was working earlier in the day, may have to revert changes.
+Testing was completed in Google Chrome  and Mozilla Firefox browsers to the local server.
  
 ## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
 
 
 
@@ -78,8 +87,19 @@ Project Link: https://github.com/vetty88/Note-Taker
 
 ## Creator and Acknowledgements
 
-vetty88
+vetty88@github.com
 
---Acknowledgements
-* []
-* []
+**Credits**
+Code Author (original assignment): Monash University/Trilogy Education.
+
+
+Resources utilised to research to edit the code: 
+* Monash University ReadMe and Slide Materials
+* Mozilla MDN WebDocs: https://developer.mozilla.org/en-US/ 
+* W3 Schools: https://www.w3schools.com/
+* Stack Overflow: https://www.stackoverflow.com/
+
+**Badges**
+
+![Made with love in Bairnsdale ](https://madewithlove.now.sh/au?heart=true&template=plastic&text=Bairnsdale+)
+
