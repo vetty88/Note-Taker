@@ -2,7 +2,7 @@
   "name": "note-taker",
   "version": "1.0.0",
   "description": "A note taking application using Node Express",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -10,14 +10,13 @@
   "author": "vetty",
   "license": "MIT",
   "dependencies": {
-    "bootswatch": "^4.5.0",
-    "dnode": "^1.2.2",
     "express": "^4.17.1",
     "fs": "0.0.1-security",
-    "mysql": "^2.16.0",
-    "nodeQuery": "0.0.9-1",
-    "request": "^2.88.2"
+    "javascript": "^1.0.0",
+    "jquery": "^3.5.1",
+    "mysql": "^2.18.1"
   },
+  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vetty88/Note-Taker.git"

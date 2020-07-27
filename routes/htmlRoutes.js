@@ -1,31 +1,22 @@
 /*jshint esversion: 6 */ 
+const path = require('path');
 
-// ===============================================================================
-// DEPENDENCIES
-// We need to include the path package to get the correct file path for our html
-// ===============================================================================
-/*jshint esversion: 6 */ 
-const fs = require("fs");
-const path = require("path");
-const request = require('request');
-const express = require('express');
+module.exports = function(app){
+    app.get("/notes", function(req, res){
+        res.sendFile(path.join(__dirname, "../public/notes.html"))
+    });
 
-const app = express();
-// ===============================================================================
-// ROUTING
-// ===============================================================================
+    app.get("/assets/js/index.js", function(req, res){
+        res.sendFile(path.join(__dirname, "../public/assets/js/index.js")); 
+    });
 
-module.exports = function(app) {
-    // HTML GET Requests
-    // Below code handles when users "visit" a page.
-    // In each of the below cases the user is shown an HTML page of content
-    // ---------------------------------------------------------------------------
+    app.get("/assets/css/style.css", function(req, res){
+        res.sendFile(path.join(__dirname, "../public/assets/css/styles.css")); 
+    });
 
-    app.get("./notes", function(req, res) {
-        res.sendFile(path.join(__dirname, "../public/notes.html"));
-      });
-    
-      app.get("./", function(req, res) {
+    app.get("*", function(req,res){
         res.sendFile(path.join(__dirname, "../public/index.html"));
-      });
-    };
+    })
+
+    
+}

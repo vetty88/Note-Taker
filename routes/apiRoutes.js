@@ -1,95 +1,60 @@
 /*jshint esversion: 6 */ 
-
-// ===============================================================================
-// LOAD DATA
-// We are linking our routes to a series of "data" sources.
-// These data sources hold arrays of information on notes.
-// ===============================================================================
-
-
-/*jshint esversion: 6 */ 
 const fs = require("fs");
-const path = require("path");
-const request = require('request');
-const express = require('express');
-
-const app = express();
-
-module.exports = function (app) {
-
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  next();
-});
-
-app.get('./api/notes', (req, res) => {
-  request();
-    fs.readFile(path.join(__dirname, "../db/db.json"), (err, data) => {
-    if (error || response.statusCode !== 200) {
-        return res.status(500).json({ type: 'error', message: err.message });
-      }
-
-      res.json(JSON.parse(body));
-    }
-  );
-});
-
-// ===============================================================================
-// ROUTING
-// ===============================================================================
 
 
-  // API GET Requests
-  // Below code handles when users "visit" a page.
-
-
-  // app.get("/api/notes", (req, res) => {
-  //   request();
-  //   fs.readFile(path.join(__dirname, "../db/db.json"), (err, data) => {
-  //     if (err) throw err;
-  //     console.log(JSON.parse(data));
-  //     res.json(JSON.parse(data));
-  //   });
-  // });
-
-  // API POST Requests
-  // Below code handles when a user submits a form and thus submits data to the server.
-
-  app.post("/api/notes", function (req, res) {
-    fs.readFile(path.join(__dirname, "../db/db.json"), (err, data) => {
+module.exports = function(app) {
+  app.get("/api/notes", (req, res) => {
+    fs.readFile("db/db.json", (err, data) => {
       if (err) throw err;
-      let newNote = req.body;
-      //let id = Math.floor(Math.random() * 1000);
-      let notesArr = (JSON.parse(data));
-      let id = notesArr[notesArr.length - 1].id + 1;
-      newNote.id = id;
-      notesArr.push(newNote);
-      //req.body + `{"id":"${id}"}`);
-      let notesString = JSON.stringify(notesArr);
-      console.log(typeof notesString);
-      fs.writeFileSync(path.join(__dirname, "../db/db.json"), notesString);
+      res.json(JSON.parse(data));
     });
   });
 
-  // API DELETE Requests
-  // Below code handles when a user submits a form and thus submits data to the server.
+ 
+  app.post("/api/notes", function(req, res) {
+    let userArray = [];
+    let userNote = req.body;
 
-  app.delete("/api/notes/:id", function (req, res) {
-    fs.readFile(path.join(__dirname, "../db/db.json"), (err, data) => {
+    fs.readFile("db/db.json", (err, data) => {
       if (err) throw err;
-      console.log(req.params.id);
-      //console.log(JSON.parse(data));
-      let notesArr = (JSON.parse(data));
-      let newNotesArr = [];
-      for (i = 0; i < notesArr.length; i++) {
-        if (notesArr[i].id != req.params.id) {
-          newNotesArr.push(notesArr[i]);
+      userArray = JSON.parse(data);
+  
+      if (userArray === 0) {
+        let id = 0;
+      }
+      if (userArray.length > 0) {
+        let newLength = userArray.length;
+        userNote.id = userArray[newLength - 1].id + 1;
+      } else {
+        id = 0;
+      }
+      userNote.id = id += 1;
+      userArray.push(userNote); 
+
+      fs.writeFile("./Develop/db/db.json", JSON.stringify(userArray, null, 2), err => {
+        if (err) throw err;
+      });
+    });
+      res.json(userNote);
+  });
+
+ 
+  app.delete("/api/notes/:id", (req, res) => {
+    let selected = parseInt(req.params.id);
+
+    fs.readFile("./Develop/db/db.json", (err, data) => {
+      if (err) throw err;
+      userArray = JSON.parse(data);
+
+      for (let i = 0; i < userArray.length; i++) {
+        if (selected === userArray[i].id) {
+          res.json(userArray.splice(i, 1));
         }
       }
-      console.log(newNotesArr);
-      let notesString = JSON.stringify(newNotesArr);
-      console.log(notesString);
-      fs.writeFileSync(path.join(__dirname, "../db/db.json"), notesString);
+      fs.writeFile("./Develop/db/db.json", JSON.stringify(userArray, null, 2), err => {
+        if (err) throw err;
+        console.log(`Deleted Note #${selected}`);
+      });
     });
   });
 };
