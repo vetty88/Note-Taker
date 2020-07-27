@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta https-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Note Taker</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/8e8798ccae.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.0/flatly/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Note Taker
+    </a>
+    <div class="icons">
+      <i class="fas fa-save text-light save-note"></i>
+      <i class="fas fa-pen text-light new-note"></i>
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-4 list-container">
+        <div class="card">
+          <ul class="list-group">
+          </ul>
+        </div>
+      </div>
+      <div class="col-8">
+        <input class="note-title" placeholder="Note Title" maxlength="28" type="text">
+        <textarea class="note-textarea" placeholder="Note Text"></textarea>
+      </div>
+    </div>
+  </div>
+  
+  <script src="./assets/js/index.js"></script>
+  <script src="server.js"></script>
+</body>
+
+</html>
