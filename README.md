@@ -22,7 +22,7 @@ Screenshot of Project (Google Chrome):
 ![Screenshot](./Screen.PNG?raw=true)
 Repo: https://github.com/vetty88/Note-Taker
 
-Video of file in action
+Video of app in action, see file: https://github.com/vetty88/Note-Taker/blob/master/Note%20Taker.mp4
 
 
 ## Installation
