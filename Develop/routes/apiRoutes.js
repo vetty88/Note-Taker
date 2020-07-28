@@ -20,16 +20,15 @@ module.exports = function(app) {
       if (err) throw err;
       userArray = JSON.parse(data);
   
-      if (userArray == 0) {
-        let id = 0;
-      }
+      let id = 1;
       if (userArray.length > 0) {
-        let newLength = userArray.length;
-        userNote.id = userArray[newLength - 1].id + 1;
-      } else {
-        id = 0;
+        const lastId = userArray[userArray.length - 1].id;
+        if (lastId) {
+          id = lastId + 1;
+        }
       }
-      userNote.id = id += 1;
+
+      userNote.id = id;
       userArray.push(userNote); 
 
       fs.writeFile("./db/db.json", JSON.stringify(userArray, null, 2), err => {
