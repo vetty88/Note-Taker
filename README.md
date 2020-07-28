@@ -70,7 +70,8 @@ Fork the Project
 ## Tests
 
 See the open issues for a list of proposed features (and known issues). Testing completed and any known issues include the following:
-Current issue with deleting 'notes' getting error 'NaN will try tomorrow (28/07) to resolve. Was working earlier in the day, may have to revert changes.
+Current issue with deleting 'notes' getting error 'NaN will try tomorrow (28/07) to resolve. 
+28/07: this issue is now resolved (code fixed) if you downloaded the code prior to this change: please complete a new pull request! 
 Testing was completed in Google Chrome  and Mozilla Firefox browsers to the local server.
  
 ## License
