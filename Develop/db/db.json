@@ -1,42 +1,12 @@
 [
   {
-    "title": "I'm a banana",
-    "text": "my SPOON is TOO BIG",
-    "id": null
-  },
-  {
     "title": "Ring Ring Ring",
     "text": "Banana Phone!",
-    "id": null
+    "id": 2
   },
   {
-    "title": "Banana Man",
-    "text": "It's the banana man!",
-    "id": null
-  },
-  {
-    "title": "We have no bananas!",
-    "text": "We have no bananaaaasss!",
-    "id": null
-  },
-  {
-    "title": "Bananas in Pyjamas",
-    "text": "Were coming down the stairs!",
-    "id": null
-  },
-  {
-    "title": "B1 & B2",
-    "text": "coming to get you!",
-    "id": null
-  },
-  {
-    "title": "note 100",
-    "text": "100 bananas",
-    "id": null
-  },
-  {
-    "title": "I'm a new note!",
-    "text": "JUST A NEW NOTE!",
-    "id": null
+    "title": "You know what??",
+    "text": "This is a new NOTE!",
+    "id": 3
   }
 ]
